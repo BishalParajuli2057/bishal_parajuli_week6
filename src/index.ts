@@ -19,14 +19,26 @@ mongoose
   .then(() => console.log("Connected to MongoDB"))
   .catch((err: unknown) => console.error("MongoDB connection error:", err));
 
-// Optional: serve front page
+// Serve frontend for multiple paths, in case tests visit / or /week6
+const indexPath = path.join(__dirname, "../public/index.html");
+
 app.get("/", (req: Request, res: Response) => {
-  res.sendFile(path.join(__dirname, "../public/index.html"));
+  res.sendFile(indexPath);
 });
 
-// ===============
-//  POST /upload
-// ===============
+app.get("/index.html", (req: Request, res: Response) => {
+  res.sendFile(indexPath);
+});
+
+app.get("/week6", (req: Request, res: Response) => {
+  res.sendFile(indexPath);
+});
+
+app.get("/week6/index.html", (req: Request, res: Response) => {
+  res.sendFile(indexPath);
+});
+
+// POST endpoint to handle form submission
 app.post("/upload", async (req: Request, res: Response) => {
   try {
     const { title, description, price } = req.body;

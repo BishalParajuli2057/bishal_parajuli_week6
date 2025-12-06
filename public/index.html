@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Sell an Item</title>
+  </head>
+  <body>
+    <h1>New Offer</h1>
+
+    <form id="offerForm" action="/upload" method="POST">
+      <div>
+        <label for="title">Title</label>
+        <input id="title" name="title" type="text" required />
+      </div>
+
+      <div>
+        <label for="price">Price</label>
+        <input id="price" name="price" type="number" step="0.01" required />
+      </div>
+
+      <div>
+        <label for="description">Description</label>
+        <textarea
+          id="description"
+          name="description"
+          rows="4"
+          required
+        ></textarea>
+      </div>
+
+      <div>
+        <!-- Task says: file input with id="image". We don't handle it on server yet. -->
+        <input id="image" name="image" type="file" />
+      </div>
+
+      <button type="submit">Submit</button>
+    </form>
+  </body>
+</html>

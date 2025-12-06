@@ -23,11 +23,14 @@
     "express": "^5.2.1",
     "mongoose": "^9.0.1",
     "morgan": "^1.10.1",
-    "path": "^0.12.7"
+    "multer": "^2.0.2",
+    "path": "^0.12.7",
+    "uuid": "^13.0.0"
   },
   "devDependencies": {
     "@types/express": "^5.0.6",
     "@types/mongoose": "^5.11.96",
+    "@types/multer": "^2.0.0",
     "@types/node": "^24.10.1",
     "nodemon": "^3.1.11",
     "tsc-watch": "^7.2.0",

@@ -2,37 +2,44 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Sell an Item</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Offer Marketplace</title>
+    <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <h1>New Offer</h1>
+    <div class="container">
+      <h1>Create New Offer</h1>
 
-    <form id="offerForm" action="/upload" method="POST">
-      <div>
-        <label for="title">Title</label>
-        <input id="title" name="title" type="text" required />
-      </div>
+      <div id="message" class="message"></div>
 
-      <div>
-        <label for="price">Price</label>
-        <input id="price" name="price" type="number" step="0.01" required />
-      </div>
+      <form id="offerForm" enctype="multipart/form-data">
+        <div class="form-group">
+          <label for="title">Title:</label>
+          <input type="text" id="title" name="title" required />
+        </div>
 
-      <div>
-        <label for="description">Description</label>
-        <textarea
-          id="description"
-          name="description"
-          rows="4"
-          required
-        ></textarea>
-      </div>
+        <div class="form-group">
+          <label for="description">Description:</label>
+          <textarea id="description" name="description" required></textarea>
+        </div>
 
-      <div>
-        <input id="image" name="image" type="file" />
-      </div>
+        <div class="form-group">
+          <label for="price">Price:</label>
+          <input type="number" id="price" name="price" step="0.01" required />
+        </div>
 
-      <button type="submit">Submit</button>
-    </form>
+        <div class="form-group">
+          <label for="image">Image:</label>
+          <input type="file" id="image" name="image" accept="image/*" />
+        </div>
+
+        <button type="submit">Create Offer</button>
+      </form>
+
+      <h1>Available Offers</h1>
+      <div id="offersContainer"></div>
+    </div>
+
+    <script src="script.js"></script>
   </body>
 </html>
